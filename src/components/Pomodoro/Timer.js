@@ -70,7 +70,21 @@ export default class Timer extends Component {
     restartInterval = () => {
         clearInterval();
 
-        this.interval = setInterval();
+        this.interval = setInterval(this.countDown, 1000);
+    }
+
+    countDown = () => {
+        if(this.state.time === 0){
+            this.setState({
+                alert: {
+                    type: 'Beep',
+                    message: 'Beeeeeeeeeep'
+                }
+            })
+        }
+        else{
+            
+        }
     }
 
 
