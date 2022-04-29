@@ -6,19 +6,19 @@ export default class Timer extends Component {
         super();
 
         //initialState
-        this.state={
+        this.state = {
             alert:{
                 type:'',
                 message:'',
             }, 
 
-            time:0
+            time: 0
         };
 
         this.times ={
             defaultTime: 1500, //25 min
-            shortBrak: 300, // 5 min
-            longBrak: 900, // 15 min
+            shortBreak: 300, // 5 min
+            longBreak: 900, // 15 min
         }
     }
 
@@ -35,40 +35,48 @@ export default class Timer extends Component {
         })
     }
 
-    //Botones
+    //buttons
     setTimeForWork = () => {
         this.setState({
             alert: {
                 type: 'work',
-                message: 'TRABAJA PERRA'    
+                message: 'start working'    
             }
         })
+
+        this.setTime(this.times.defaultTime);
+
     }
     setTimeForShortBreak = () => {
         this.setState({
             alert: {
-                type: 'shortBrake',
-                message: 'DESCANSANDO'    
+                type: 'shortBreak',
+                message: 'little break'    
             }
         })
+        
+        this.setTime(this.times.shortBreak);
     }
     setTimeForLongBreak = () => {
         this.setState({
             alert: {
-                type: 'LongBrake',
-                message: 'DESCANSANDO MAS, HUEVON'    
+                type: 'LongBreak',
+                message: 'have a longer break'    
             }
         })
+        
+        this.setTime(this.times.longBreak);
     }
 
     setTime = (newTime) => {
+        this.restartInterval();
         this.setState({
             time: newTime,
         })
     }
 
     restartInterval = () => {
-        clearInterval();
+        clearInterval(this.interval);
 
         this.interval = setInterval(this.countDown, 1000);
     }
@@ -80,10 +88,12 @@ export default class Timer extends Component {
                     type: 'Beep',
                     message: 'Beeeeeeeeeep'
                 }
-            })
+            });
         }
         else{
-            
+            this.setState({
+                time: this.state.time - 1
+            });
         }
     }
 
@@ -97,7 +107,7 @@ export default class Timer extends Component {
           </div>
 
           <div className = "timer">
-                Mostrar tiempo en minutos
+                {this.state.time}
           </div>
 
           <div className = "types">
