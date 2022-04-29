@@ -64,7 +64,6 @@ export default class Timer extends Component {
                 message: 'have a longer break'    
             }
         })
-        
         this.setTime(this.times.longBreak);
     }
 
@@ -97,6 +96,15 @@ export default class Timer extends Component {
         }
     }
 
+    displayTimer(seconds){
+        let minute = Math.floor((seconds / 60) % 60);
+        minute = (minute < 10)? '0' + minute : minute;
+
+        let second = seconds % 60;
+        second = (second < 10)? '0' + second : second;
+        
+        return `${minute} : ${second}`
+    }
 
   render() {
       const {alert:{message, type}, time} =this.state;
@@ -107,7 +115,7 @@ export default class Timer extends Component {
           </div>
 
           <div className = "timer">
-                {this.state.time}
+                {this.displayTimer(time)}
           </div>
 
           <div className = "types">
