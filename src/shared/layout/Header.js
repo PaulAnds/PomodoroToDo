@@ -9,7 +9,6 @@ const Header = ({title, url}) => {
             <a href={url}>
                 <img src={logo} className="App-logo" alt="logo" />
             </a>
-            <h1>{title}</h1>
         </header>
         );
 }

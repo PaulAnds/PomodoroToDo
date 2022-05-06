@@ -1,0 +1,57 @@
+.Crypto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightblue;
+}
+
+.Crypto .result{
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 50px green, 0 0 5px darkgreen;
+}
+
+.Crypto .Title{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;
+}
+
+.Crypto .Box{
+    background: darkblue;
+    border-radius: 20px; 
+    width: 50%;
+    padding: 70px 0;
+    
+}
+
+.Crypto .input{
+    background: rgb(2, 73, 95);
+    font-size: 20px;
+    width: 100px;
+    height: 35px;
+    font-weight: bold;
+}
+
+.Crypto .note{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px green, 0 0 5px darkgreen;
+
+}
+
+.Crypto button{
+    background: #399e35;
+    border: 1px solid #2b97b8;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px 11px;
+    border-radius: 50px; 
+}

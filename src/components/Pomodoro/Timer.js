@@ -60,7 +60,7 @@ export default class Timer extends Component {
     setTimeForLongBreak = () => {
         this.setState({
             alert: {
-                type: 'LongBreak',
+                type: 'longBreak',
                 message: 'have a longer break'    
             }
         })
