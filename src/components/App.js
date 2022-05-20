@@ -6,13 +6,16 @@ import './App.css';
 //import Todo from './Todo/Todo.js';
 //import Timer from './Pomodoro/Timer';
 //import Crypto from './Crypto/Crypto';
-import Charthome from './Chart/Charthome';
+//import Charthome from './Chart/Charthome';
+//import Animation from './Animation/Animation.js';
+//import Numbers from './PureComponent/Numbers';
+import Calculator from './Calculator/Calculator.js';
 
 function App() {
   return (
     <div className="App">
       <Content>
-        <Charthome />
+        <Calculator />
       </Content>
     </div>
   );
