@@ -11,8 +11,10 @@ export default class Timer extends Component {
                 type:'',
                 message:'',
             }, 
-
-            time: 0
+            button: "fa fa-pause",
+            play: true,
+            hide: 'hidden',
+            time: 0,
         };
 
         this.times ={
@@ -71,6 +73,8 @@ export default class Timer extends Component {
         this.restartInterval();
         this.setState({
             time: newTime,
+            play: true,
+            hide: ""
         })
     }
 
@@ -89,10 +93,17 @@ export default class Timer extends Component {
                 }
             });
         }
-        else{
+        else if(this.state.time !== 0 && this.state.play){
             this.setState({
-                time: this.state.time - 1
+                time: this.state.time - 1,
+                button: "fa fa-pause"
             });
+        }
+        else {
+            this.setState({
+                button: "fa fa-play",
+                time:this.state.time
+            })
         }
     }
 
@@ -105,6 +116,26 @@ export default class Timer extends Component {
         
         return `${minute} : ${second}`
     }
+
+    pauseButton = () =>{
+
+        this.setState({
+            play: !this.state.play
+        })
+    }
+
+    reset = () => {
+        this.setTime(this.times.defaultTime);
+        this.restartInterval();
+        this.setState({
+            alert:{
+                message:'',
+            }, 
+            play: false,
+            hide: "hidden"
+        })
+    }
+
 
   render() {
       const {alert:{message, type}, time} =this.state;
@@ -137,6 +168,21 @@ export default class Timer extends Component {
                 > 
                 long break
               </button>
+          </div>
+          <div hidden={this.state.hide}>
+            <button 
+                className = "pause"
+                
+                onClick= {this.pauseButton}
+                > 
+                <i class= {this.state.button}></i>
+            </button>
+            <button 
+                className = "reset"
+                onClick= {this.reset}
+                > 
+                <i class= "fa fa-stop"></i>
+            </button>
           </div>
       </div>
     )

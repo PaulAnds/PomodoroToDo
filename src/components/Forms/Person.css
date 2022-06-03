@@ -1,0 +1,24 @@
+body {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: '100%';
+}
+
+.carta{
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.error{
+    border: 1px solid red;
+}
+
+
+.errorMessage{
+    color: red;
+
+}

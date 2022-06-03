@@ -9,13 +9,14 @@ import './App.css';
 //import Charthome from './Chart/Charthome';
 //import Animation from './Animation/Animation.js';
 //import Numbers from './PureComponent/Numbers';
-import Calculator from './Calculator/Calculator.js';
+//import Calculator from './Calculator/Calculator.js';
+import Person from './Forms/Person';
 
 function App() {
   return (
     <div className="App">
       <Content>
-        <Calculator />
+        <Person />
       </Content>
     </div>
   );
